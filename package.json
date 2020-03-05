@@ -1,0 +1,64 @@
+{
+  "name": "fullstack-sandbox-api",
+  "version": "0.0.1",
+  "description": "GraphQL API for Fullstack Sandbox App",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhudec/full-stack-sandbox-api.git"
+  },
+  "keywords": [
+    "node",
+    "graphql",
+    "apollo",
+    "typescript",
+    "api"
+  ],
+  "author": "Lukas Hudec <hudec.luke@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xhudec/full-stack-sandbox-api/issues"
+  },
+  "homepage": "https://github.com/xhudec/full-stack-sandbox-api#readme",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "_prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|less|graphql|md|mdx)\"",
+    "prettier:format": "npm run _prettier -- --write",
+    "prettier:validate": "npm run _prettier -- --list-different",
+    "lint:css": "stylelint \"*.(css|scss|js|jsx|ts|tsx)\"",
+    "lint:js": "eslint --ext js,jsx,ts,tsx .",
+    "lint": "npm run lint:js && npm run lint:css",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "typecheck": "tsc --project ./tsconfig.json"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.10.1",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@strv/commitlint-config": "^1.1.0",
+    "@strv/eslint-config-node": "^2.2.1",
+    "@strv/eslint-config-typescript": "^2.1.5",
+    "@strv/prettier-config": "^1.0.3",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.1",
+    "husky": "^4.2.3",
+    "is-ci-cli": "^2.0.0",
+    "jest": "^25.1.0",
+    "jest-watch-select-projects": "^2.0.0",
+    "jest-watch-typeahead": "^0.4.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
+}
