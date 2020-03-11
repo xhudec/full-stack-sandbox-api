@@ -12,8 +12,6 @@ async function main(): Promise<void> {
   await createDatabaseConnection()
   const schema = await createGraphQLSchema()
 
-  console.log('[schema]', schema)
-
   const apolloServer = new ApolloServer({ schema, introspection: true, playground: true })
 
   apolloServer.applyMiddleware({ app })
