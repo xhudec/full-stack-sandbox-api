@@ -1,0 +1,23 @@
+pull_request_rules:
+  - name: 'Merge my PRs when CI/CD passes ✅'
+    conditions:
+      - author=xhudec
+      - status-success=static-tests
+      # - status-success=app-tests
+      - label!=Work in progress ⚠️
+    actions:
+      merge:
+        method: squash
+  - name: 'Merge PRs when approved 👀 and CI/CD passes ✅'
+    conditions:
+      - '#approved-reviews-by>=1'
+      - status-success=static-tests
+      # - status-success=app-tests
+    actions:
+      merge:
+        method: squash
+  - name: 'Delete host branch after PR is merged 🧹'
+    conditions:
+      - merged
+    actions:
+      delete_head_branch: {}
