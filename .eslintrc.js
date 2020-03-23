@@ -32,6 +32,7 @@ module.exports = {
     'import/group-exports': 'off',
     '@typescript-eslint/member-ordering': 'off',
     'new-cap': 'off',
+    'arrow-parens': 'off',
 
     // prettier is responsible for all code formatting
     'comma-dangle': 'off',
