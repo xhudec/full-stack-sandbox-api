@@ -7,7 +7,7 @@ import { ObjectType, Field, ID } from 'type-graphql'
 @ObjectType()
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  @Field(type => ID)
+  @Field((type) => ID)
   id: string
 
   @Column()

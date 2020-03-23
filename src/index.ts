@@ -25,7 +25,7 @@ async function main(): Promise<void> {
   })
 }
 
-main().catch(err => {
+main().catch((err) => {
   // eslint-disable-next-line no-console
   console.error('🚨[API Error]', err)
 })
