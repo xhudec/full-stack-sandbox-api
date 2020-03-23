@@ -15,6 +15,9 @@
     "moduleResolution": "node",
     "isolatedModules": true,
     "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "paths": {
       "@components/*": ["components/*"],
       "@hooks/*": ["hooks/*"],

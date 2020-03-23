@@ -1,24 +1,31 @@
 import express from 'express'
-import { ApolloServer, gql } from 'apollo-server-express'
+import { ApolloServer } from 'apollo-server-express'
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-  },
-}
-
-const server = new ApolloServer({ typeDefs, resolvers })
+import './config/setup'
+import config from './config'
+import createDatabaseConnection from './database/database-connection'
+import createGraphQLSchema from './graphql/create-schema'
 
 const app = express()
-server.applyMiddleware({ app })
 
-app.listen({ port: 4000 }, () => {
+async function main(): Promise<void> {
+  await createDatabaseConnection()
+  const schema = await createGraphQLSchema()
+
+  const apolloServer = new ApolloServer({ schema, introspection: true, playground: true })
+
+  apolloServer.applyMiddleware({ app })
+
+  app.listen({ port: config.server.port }, () => {
+    // eslint-disable-next-line no-console
+    console.info(
+      'ℹ️[API]',
+      `🚀 Server ready at http://localhost:${config.server.port}${apolloServer.graphqlPath}`
+    )
+  })
+}
+
+main().catch((err) => {
   // eslint-disable-next-line no-console
-  console.info('[API]', `🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+  console.error('🚨[API Error]', err)
 })
