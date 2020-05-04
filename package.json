@@ -77,7 +77,7 @@
     "eslint-plugin-jest": "^23.8.2",
     "husky": "^4.2.5",
     "is-ci-cli": "^2.0.0",
-    "jest": "^25.4.0",
+    "jest": "^25.5.4",
     "jest-watch-select-projects": "^2.0.0",
     "jest-watch-typeahead": "^0.5.0",
     "nodemon": "^2.0.3",
