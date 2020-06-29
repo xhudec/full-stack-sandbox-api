@@ -74,7 +74,7 @@
     "babel-plugin-transform-typescript-metadata": "^0.3.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-jest": "^23.17.1",
     "husky": "^4.2.5",
     "is-ci-cli": "^2.1.1",
     "jest": "^25.5.4",
