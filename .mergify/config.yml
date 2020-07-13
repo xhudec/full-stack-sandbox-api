@@ -3,7 +3,7 @@ pull_request_rules:
     conditions:
       - author=xhudec
       - status-success=static-tests
-      - status-success=app-tests
+      # - status-success=app-tests
       - label!=Work in progress ⚠️
       - base=master
     actions:
@@ -13,7 +13,7 @@ pull_request_rules:
     conditions:
       - author~=^dependabot(|-preview)\[bot\]$
       - status-success=static-tests
-      - status-success=app-tests
+      # - status-success=app-tests
       - base=master
     actions:
       merge:
